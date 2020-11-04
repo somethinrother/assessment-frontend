@@ -4,7 +4,11 @@
   <h4><LinkTo @route="products.show" @model={{product.id}}>{{product.name}}</LinkTo></h4>
 
   <table>
-    {{productTitles}}
+    <tr>
+      {{#each product.fieldNames as |fieldName|}}
+        <td>{{fieldName}}</td>
+      {{/each}}
+    </tr>
     {{#each product.productDataSubset as |data|}}
       <tr>
         {{#each-in data as |title value|}}

@@ -5,6 +5,12 @@
 <h4>{{product.name}}</h4>
 
 <table>
+  <tr>
+    {{#each product.fieldNames as |fieldName|}}
+      <td>{{fieldName}}</td>
+    {{/each}}
+  </tr>
+
   {{#each productData as |data|}}
     <tr>
       {{#each-in data as |title value|}}
