@@ -7,9 +7,9 @@
 <table>
   {{#each productData as |data|}}
     <tr>
-      <td>{{data.ticker}}</td>
-      <td>{{data.comp_name}}</td>
-      <td>{{data.per_end_date}}</td>
+      {{#each-in data as |title value|}}
+        <td>{{value}}</td>
+      {{/each-in}}
     </tr>
   {{/each}}
 </table>
