@@ -52,6 +52,7 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
 // Index Page
 
 .nav-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,6 +80,13 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
 .bars {
   font-size: 22px;
   border-right: solid 0.5px $dark-turquoise;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .table-wrapper {
