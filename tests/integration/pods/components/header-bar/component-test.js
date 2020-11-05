@@ -12,15 +12,20 @@ module('Integration | Component | header-bar', function(hooks) {
 
     await render(hbs`<HeaderBar />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom('[data-test-header="main"]').exists();
+  });
 
-    // Template block usage:
-    await render(hbs`
-      <HeaderBar>
-        template block text
-      </HeaderBar>
-    `);
+  test('it renders with large styling if isLarge is true', async function(assert) {
+    await render(hbs`<HeaderBar @isLarge={{true}} />`);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('[data-test-header="main"]').hasClass('header--large');
+    assert.dom('[data-test-header="image"]').hasClass('link-image--large');
+  });
+
+  test('it renders with normal styling if isLarge is false', async function(assert) {
+    await render(hbs`<HeaderBar />`);
+
+    assert.dom('[data-test-header="main"]').doesNotHaveClass('header--large');
+    assert.dom('[data-test-header="image"]').doesNotHaveClass('header--large');
   });
 });
