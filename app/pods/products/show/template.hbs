@@ -21,20 +21,25 @@
   </div>
 </div>
 
-<table>
-  <tr>
-    {{#each product.fieldNames as |fieldName|}}
-      <td>{{fieldName}}</td>
-    {{/each}}
-  </tr>
 
-  {{#each productData as |data|}}
-    <tr>
+<table class='table'>
+  <th class='table-row table-row--header'>
+    <td class='table-cell table-cell--primary' />
+    {{#each product.fieldNames as |fieldName|}}
+      <td class='table-cell'>{{fieldName}}</td>
+    {{/each}}
+  </th>
+
+  {{#each productData as |data index|}}
+    <tr class='table-row'>
+      <td class='table-cell table-cell--primary'>{{add index 1}}</td>
       {{#each-in data as |title value|}}
-        <td>{{value}}</td>
+        <td class='table-cell'>{{value}}</td>
       {{/each-in}}
     </tr>
   {{/each}}
 </table>
+
+<div class='table-footer'>sample rows</div>
 
 {{outlet}}
