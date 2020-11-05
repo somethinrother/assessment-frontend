@@ -11,7 +11,6 @@ module('Integration | Component | general-button', function(hooks) {
 
     assert.dom('[data-test-button="main"]').exists();
 
-    // Template block usage:
     await render(hbs`
       <GeneralButton>
         template block text
