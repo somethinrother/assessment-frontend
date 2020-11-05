@@ -1,4 +1,4 @@
-<table class='table'>
+<table data-test-table='body' class='table'>
   <th class='table-row table-row--header'>
     <td class='table-cell table-cell--primary' />
     {{#each @product.fieldNames as |fieldName|}}
@@ -15,6 +15,6 @@
   {{/each}}
 
   {{#if @withFooter}}
-    <div class='table-footer'>sample rows</div>
+    <div data-table='footer' class='table-footer'>sample rows</div>
   {{/if}}
 </table>

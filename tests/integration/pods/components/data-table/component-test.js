@@ -7,20 +7,20 @@ module('Integration | Component | data-table', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<DataTable />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom('[data-test-table="body"]').exists();
+  });
 
-    // Template block usage:
-    await render(hbs`
-      <DataTable>
-        template block text
-      </DataTable>
-    `);
+  test('renders footer when passed the correct variable', async function(assert) {
+    await render(hbs`<DataTable @withFooter={{true}} />`);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('[data-test-table="footer"]').exists();
+  });
+
+  test('does not render footer when not passed the correct variable', async function(assert) {
+    await render(hbs`<DataTable />`);
+
+    assert.dom('[data-test-table="footer"]').doesNotExist();
   });
 });
