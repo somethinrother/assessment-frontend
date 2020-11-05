@@ -1,0 +1,12 @@
+<div class='header {{if @isLarge "header--large link-wrapper" ""}}'>
+  {{#if @isLarge}}
+    <img class='link-image link-image--large header-item' src='/assets/avatar.png' alt='3 bars'>
+    <div class='link-text header-item'>Data Publisher</div>
+  {{else}}
+    {{#link-to 'products' class='link-wrapper'}}
+      {{fa-icon 'angle-left' class='angle header-item'}}
+      <img class='link-image header-item' src='/assets/avatar.png' alt='quandl logo'>
+      <div class='link-text header-item'>Data Publisher</div>
+    {{/link-to}}
+  {{/if}}
+</div>

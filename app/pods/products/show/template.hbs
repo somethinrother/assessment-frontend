@@ -1,10 +1,4 @@
-<div class='header'>
-  {{#link-to 'products' class='link-wrapper'}}
-    {{fa-icon 'angle-left' class='angle header-item'}}
-    <img class='link-image header-item' src='/assets/avatar.png' alt='quandl logo'>
-    <div class='link-text header-item'>Data Publisher</div>
-  {{/link-to}}
-</div>
+<HeaderBar @isLarge={{false}} />
 
 <div class='title-bar'>
   <h4 class='title'>{{product.name}}</h4>
