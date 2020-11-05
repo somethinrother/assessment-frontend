@@ -4,16 +4,18 @@
 {{#each products as |product|}}
   <h4><LinkTo @route="products.show" @model={{product.id}}>{{product.name}}</LinkTo></h4>
 
-  <table>
-    <tr>
+  <table class='table'>
+    <th class='table-row table-row--header'>
+      <td class='table-cell table-cell--primary' />
       {{#each product.fieldNames as |fieldName|}}
-        <td>{{fieldName}}</td>
+        <td class='table-cell'>{{fieldName}}</td>
       {{/each}}
-    </tr>
-    {{#each product.productDataSubset as |data|}}
-      <tr>
+    </th>
+    {{#each product.productDataSubset as |data index|}}
+      <tr class='table-row'>
+        <td class='table-cell table-cell--primary'>{{add index 1}}</td>
         {{#each-in data as |title value|}}
-          <td>{{value}}</td>
+          <td class='table-cell'>{{value}}</td>
         {{/each-in}}
       </tr>
     {{/each}}
