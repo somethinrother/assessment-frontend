@@ -10,38 +10,9 @@
 @import './components/nav-bar.scss';
 @import './components/sidebar-panel.scss';
 @import './components/sidebar-item.scss';
+@import './components/tab-link.scss';
 @import './components/title-bar.scss';
 
 // Pages
 @import './pages/products/index.scss';
 @import './pages/products/show.scss';
-
-.buttons {
-  display: flex;
-  align-items: center;
-}
-
-.button-item {
-  padding: 0 10px;
-}
-
-.tabs {
-  display: flex;
-  font-family: $source-sans-pro-bold;
-  text-transform: uppercase;
-}
-
-.tab {
-  font-size: 14px;
-  line-height: 7vh;
-  height: 7vh;
-  width: 120px;
-  color: $dark-grey;
-  text-align: center;
-  cursor: pointer;
-
-  &--active {
-    color: $turquoise;
-    border-bottom: solid 3px $turquoise;
-  }
-}
