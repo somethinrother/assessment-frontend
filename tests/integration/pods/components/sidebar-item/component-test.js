@@ -7,20 +7,17 @@ module('Integration | Component | sidebar-item', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<SidebarItem />`);
+    assert.dom('[data-test-sidebar-item="main"]').exists();
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
+  test('it renders the name properly', async function(assert) {
+    await render(hbs`<SidebarItem @name={{'name'}} />`);
+    assert.dom('[data-test-sidebar-item="name"]').hasText('name');
+  });
 
-    // Template block usage:
-    await render(hbs`
-      <SidebarItem>
-        template block text
-      </SidebarItem>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('it renders the value properly', async function(assert) {
+    await render(hbs`<SidebarItem @value={{'value'}} />`);
+    assert.dom('[data-test-sidebar-item="value"]').hasText('value');
   });
 });
