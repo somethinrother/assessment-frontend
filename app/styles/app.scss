@@ -1,2 +1,37 @@
 // Style files in the pods folder are automatically loaded in.
 @import 'pod-styles';
+
+@font-face {
+  font-family: 'Quantico';
+  src: url('fonts/Quantico/Quantico-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  background-color: #194a5f;
+  height: 65px;
+  display: flex;
+  font-family: 'Quantico';
+  padding: 0 20px;
+}
+
+.link-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header-item {
+  margin: 0 7px;
+  color: white;
+}
+
+.angle {
+  font-size: 28px;
+}
+
+.link-image {
+  max-width: 40px;
+  max-height: 40px;
+}
