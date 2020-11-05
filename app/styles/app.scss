@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Source-Sans-Pro';
-  src: url('fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
+  src: url('fonts/Source_Sans_Pro/SourceSansPro-Light.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -38,6 +38,7 @@
 $dark-grey: #a0a3a7;
 $dark-turquoise: #194a5f;
 $extra-dark-turquoise: #0e3244;
+$green: #4eb088;
 $light-grey: #eaeaea;
 $pale-blue: #f6fafd;
 $turquoise: #3d99b8;
@@ -50,6 +51,10 @@ $source-sans-pro: 'Source-Sans-Pro';
 $source-sans-pro-bold: 'Source-Sans-Pro-bold';
 
 // Index Page
+
+.page-wrapper {
+  display: flex;
+}
 
 .nav-bar {
   position: relative;
@@ -87,11 +92,13 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
   left: 0;
   right: 0;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .table-wrapper {
   background-color: $pale-blue;
   padding: 10px;
+  width: 68vw;
 }
 
 .sub-header {
@@ -101,6 +108,49 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
   text-transform: uppercase;
 }
 
+.sidebar {
+  width: 32vw;
+  padding: 15px;
+  border-left: solid 1px $light-grey;
+}
+
+.sidebar-title {
+  font-family: $quantico-bold;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.sidebar-description {
+  font-family: $source-sans-pro;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  border-bottom: solid 0.5px $light-grey;
+}
+
+.item-name {
+  font-family: $quantico-bold;
+  font-size: 12px;
+  color: $dark-grey;
+  text-transform: uppercase;
+}
+
+.item-value {
+  font-family: $quantico;
+  font-size: 14px;
+  color: $dark-turquoise;
+  text-transform: capitalize;
+}
+
+.info {
+  color: $turquoise;
+}
+
 // Show page
 .header {
   background-color: $dark-turquoise;
@@ -108,6 +158,10 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
   display: flex;
   font-family: $quantico;
   padding: 0 20px;
+
+  &--large {
+    height: 12vh;
+  }
 }
 
 .link-wrapper {
@@ -127,6 +181,11 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
 .link-image {
   max-width: 40px;
   max-height: 40px;
+
+  &--large {
+    max-width: 60px;
+    max-height: 60px;
+  }
 }
 
 .title-bar {
@@ -157,8 +216,6 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
 .buttons {
   display: flex;
   align-items: center;
-  font-family: $quantico-bold;
-  text-transform: uppercase;
 }
 
 .button {
@@ -170,11 +227,41 @@ $source-sans-pro-bold: 'Source-Sans-Pro-bold';
   color: $turquoise;
   margin: 0 10px;
   cursor: pointer;
+  text-transform: uppercase;
+  font-family: $quantico-bold;
 
   &--secondary {
     background-color: $turquoise;
     color: $white;
   }
+
+  &--small {
+    border: solid 2px $green;
+    color: $green;
+    width: 120px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 2px;
+    padding: 3px 1px;
+    font-family: $source-sans-pro-bold;
+    font-size: 12px;
+  }
+
+  &--full-width {
+    width: 80%;
+    margin: 0 auto 10px auto;
+  }
+
+  &--icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $source-sans-pro;
+  }
+}
+
+.button-item {
+  padding: 0 10px;
 }
 
 .tabs {

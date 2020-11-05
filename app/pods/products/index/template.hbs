@@ -14,37 +14,74 @@
   </div>
 </div>
 
-<div class='header link-wrapper'>
-  <img class='link-image header-item' src='/assets/avatar.png' alt='quandl logo'>
+<div class='header header--large link-wrapper'>
+  <img class='link-image link-image--large header-item' src='/assets/avatar.png' alt='quandl logo'>
   <div class='link-text header-item'>Data Publisher</div>
 </div>
 
-<div class='table-wrapper'>
-  <div class='sub-header'>datasets in this data product</div>
+<div class='page-wrapper'>
+  <div class='table-wrapper'>
+    <div class='sub-header'>datasets in this data product</div>
 
-  {{#each products as |product|}}
-    <div class='title-bar'>
-      <div class='title'>{{product.name}}</div>
-      <LinkTo @route="products.show" @model={{product.id}} class='subtitle'>expand</LinkTo>
+    {{#each products as |product|}}
+      <div class='title-bar'>
+        <div class='title'>{{product.name}}</div>
+        <LinkTo @route="products.show" @model={{product.id}} class='subtitle'>expand</LinkTo>
+      </div>
+
+      <table class='table'>
+        <th class='table-row table-row--header'>
+          <td class='table-cell table-cell--primary' />
+          {{#each product.fieldNames as |fieldName|}}
+            <td class='table-cell'>{{fieldName}}</td>
+          {{/each}}
+        </th>
+        {{#each product.productDataSubset as |data index|}}
+          <tr class='table-row'>
+            <td class='table-cell table-cell--primary'>{{add index 1}}</td>
+            {{#each-in data as |title value|}}
+              <td class='table-cell'>{{value}}</td>
+            {{/each-in}}
+          </tr>
+        {{/each}}
+      </table>
+    {{/each}}
+  </div>
+
+  <div class='sidebar'>
+    <div class='button button--small'>commercial data</div>
+    <div class='sidebar-title'>data overview</div>
+    <div class='sidebar-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate eget sem vitae interdum. Nam iaculis, ante vitae tristique iaculis, dui nisl porta lacus, et finibus lectus lacus sed diam. Cras vitae ante erat. Sed sed augue interdum, luctus sem id, posuere elit. Praesent id ante consectetur, malesuada nulla non, eleifend eros.</div>
+    <div class='sidebar-item'>
+      <div class='item-name'>delivery frequency {{fa-icon 'info-circle' class='info'}}</div>
+      <div class='item-value'>daily</div>
     </div>
 
-    <table class='table'>
-      <th class='table-row table-row--header'>
-        <td class='table-cell table-cell--primary' />
-        {{#each product.fieldNames as |fieldName|}}
-          <td class='table-cell'>{{fieldName}}</td>
-        {{/each}}
-      </th>
-      {{#each product.productDataSubset as |data index|}}
-        <tr class='table-row'>
-          <td class='table-cell table-cell--primary'>{{add index 1}}</td>
-          {{#each-in data as |title value|}}
-            <td class='table-cell'>{{value}}</td>
-          {{/each-in}}
-        </tr>
-      {{/each}}
-    </table>
-  {{/each}}
+    <div class='sidebar-item'>
+      <div class='item-name'>data frequency {{fa-icon 'info-circle' class='info'}}</div>
+      <div class='item-value'>daily</div>
+    </div>
+
+    <div class='sidebar-item'>
+      <div class='item-name'>reporting lag {{fa-icon 'info-circle' class='info'}}</div>
+      <div class='item-value'>12 hours</div>
+    </div>
+
+    <div class='sidebar-item'>
+      <div class='item-name'>history {{fa-icon 'info-circle' class='info'}}</div>
+      <div class='item-value'>nov 2005</div>
+    </div>
+
+    <div class='sidebar-item'>
+      <div class='item-name'>coverage {{fa-icon 'info-circle' class='info'}}</div>
+      <div class='item-value'>5000+ companies, 59 indicators</div>
+    </div>
+
+    <div class='button button--full-width button--icon'>
+      <span class='button-item'>tables api</span>
+      <span class='button-item'>{{fa-icon 'info-circle' class='info'}}</span></div>
+    <div class='button button--secondary button--full-width'>pricing</div>
+  </div>
 </div>
 
 {{outlet}}
