@@ -4,6 +4,7 @@
 @import './core/fonts.scss';
 
 // Components
+@import './components/header-bar.scss';
 @import './components/nav-bar.scss';
 @import './components/sidebar-panel.scss';
 @import './components/sidebar-item.scss';
@@ -27,42 +28,6 @@
 }
 
 // Show page
-.header {
-  background-color: $dark-turquoise;
-  height: 9vh;
-  display: flex;
-  font-family: $quantico;
-  padding: 0 20px;
-
-  &--large {
-    height: 12vh;
-  }
-}
-
-.link-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.header-item {
-  margin: 0 7px;
-  color: $white;
-}
-
-.angle {
-  font-size: 28px;
-}
-
-.link-image {
-  max-width: 40px;
-  max-height: 40px;
-
-  &--large {
-    max-width: 60px;
-    max-height: 60px;
-  }
-}
-
 .title-bar {
   display: flex;
   justify-content: space-between;
