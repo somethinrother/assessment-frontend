@@ -6,11 +6,9 @@
     <div class='sub-header'>datasets in this data product</div>
 
     {{#each products as |product|}}
-      <div class='title-bar'>
-        <div class='title'>{{product.name}}</div>
+      <TitleBar @title={{product.name}}>
         <LinkTo @route="products.show" @model={{product.id}} class='subtitle'>expand</LinkTo>
-      </div>
-
+      </TitleBar>
       <DataTable @product={{product}} @productData={{product.productDataSubset}} />
     {{/each}}
   </div>

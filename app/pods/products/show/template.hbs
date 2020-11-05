@@ -1,19 +1,17 @@
 <HeaderBar @isLarge={{false}} />
-
-<div class='title-bar'>
-  <h4 class='title'>{{product.name}}</h4>
+<TitleBar @title={{product.name}}>
   <div class='buttons'>
     <div class='button'>coverage</div>
     <div class='button button--secondary'>download {{fa-icon 'caret-down'}}</div>
   </div>
-</div>
+</TitleBar>
 
-<div class='title-bar'>
+<TitleBar>
   <div class='tabs'>
     <div class='tab tab--active'>data sample</div>
     <div class='tab'>coverage</div>
   </div>
-</div>
+</TitleBar>
 
 <DataTable @product={{product}} @productData={{productData}} @withFooter={{true}} />
 {{outlet}}

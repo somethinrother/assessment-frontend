@@ -9,50 +9,10 @@
 @import './components/nav-bar.scss';
 @import './components/sidebar-panel.scss';
 @import './components/sidebar-item.scss';
+@import './components/title-bar.scss';
 
-// Index Page
-.page-wrapper {
-  display: flex;
-}
-
-.table-wrapper {
-  background-color: $pale-blue;
-  padding: 10px;
-  width: 68vw;
-}
-
-.sub-header {
-  color: $dark-grey;
-  font-family: $quantico;
-  padding: 20px 0;
-  text-transform: uppercase;
-}
-
-// Show page
-.title-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid 0.5px $light-grey;
-  padding: 0 27px;
-  background-color: $white;
-}
-
-.title {
-  color: $dark-turquoise;
-  font-family: $quantico-bold;
-  font-size: 22px;
-  margin: 2vh 0;
-}
-
-.subtitle {
-  color: $turquoise;
-  font-family: $quantico-bold;
-  font-size: 16px;
-  margin: 2vh 0;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+// Pages
+@import './pages/products/index.scss';
 
 .buttons {
   display: flex;
