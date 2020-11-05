@@ -7,20 +7,17 @@ module('Integration | Component | tab-link', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<TabLink />`);
+    assert.dom('[data-test-tab="main"]').exists();
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
+  test('it with active styling when isActive is true', async function(assert) {
+    await render(hbs`<TabLink @isActive={{true}} />`);
+    assert.dom('[data-test-tab="main"]').hasClass('tab--active');
+  });
 
-    // Template block usage:
-    await render(hbs`
-      <TabLink>
-        template block text
-      </TabLink>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('it renders with normal styling when isActive is false', async function(assert) {
+    await render(hbs`<TabLink />`);
+    assert.dom('[data-test-tab="main"]').doesNotHaveClass('tab--active');
   });
 });

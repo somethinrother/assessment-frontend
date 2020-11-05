@@ -7,20 +7,25 @@ module('Integration | Component | title-bar', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<TitleBar />`);
+    assert.dom('[data-test-title-bar="main"]').exists();
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
     await render(hbs`
       <TitleBar>
         template block text
       </TitleBar>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('[data-test-title-bar="main"]').hasText('template block text');
+  });
+
+  test('it renders with a title when passed one', async function(assert) {
+    await render(hbs`<TitleBar @title={{'title'}} />`);
+    assert.dom('[data-test-title-bar="title"]').hasText('title');
+  });
+
+  test('it renders without a title when none is passed', async function(assert) {
+    await render(hbs`<TitleBar />`);
+    assert.dom('[data-test-title-bar="title"]').doesNotExist();
   });
 });
