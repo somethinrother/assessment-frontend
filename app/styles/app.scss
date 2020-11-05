@@ -9,6 +9,15 @@
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+  font-family: 'Quantico-bold';
+  src: url('fonts/Quantico/Quantico-Bold.ttf') format('truetype');
+  font-style: bold;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+// Show page
 .header {
   background-color: #194a5f;
   height: 65px;
@@ -34,4 +43,11 @@
 .link-image {
   max-width: 40px;
   max-height: 40px;
+}
+
+.title {
+  color: #12303f;
+  font-family: 'Quantico-bold';
+  font-size: 22px;
+  margin: 15px 27px;
 }
