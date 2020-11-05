@@ -73,8 +73,9 @@ $white: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 0.5px $light-grey;
+  border: solid 0.5px $light-grey;
   padding: 0 27px;
+  background-color: $white;
 }
 
 .title {
@@ -82,6 +83,15 @@ $white: #fff;
   font-family: 'Quantico-bold';
   font-size: 22px;
   margin: 2vh 0;
+}
+
+.subtitle {
+  color: $turquoise;
+  font-family: 'Quantico-bold';
+  font-size: 16px;
+  margin: 2vh 0;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .buttons {
@@ -135,6 +145,9 @@ $white: #fff;
   overflow: scroll;
   border-spacing: 0;
   font-family: 'Source-Sans-Pro';
+  margin-bottom: 20px;
+  border: solid 0.5px $light-grey;
+  background-color: $white;
 
   &--small {
     max-height: 30vh;
@@ -162,10 +175,6 @@ $white: #fff;
   border-top: none;
   border-right: none;
 
-  &:last-of-type {
-    border-right: solid 0.5px $light-grey;
-  }
-
   &--primary {
     min-width: 20px;
     background-color: $pale-blue;
@@ -183,4 +192,18 @@ $white: #fff;
   height: 5vh;
   line-height: 5vh;
   padding: 0 20px;
+}
+
+// Index Page
+
+.table-wrapper {
+  background-color: $pale-blue;
+  padding: 10px;
+}
+
+.sub-header {
+  color: $dark-grey;
+  font-family: 'Quantico';
+  padding: 20px 0;
+  text-transform: uppercase;
 }

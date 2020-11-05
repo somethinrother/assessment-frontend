@@ -1,25 +1,38 @@
 <img src='/assets/quandl-logo.svg' alt="quandl logo">
-<h3>Product Page - Index - {{@publisher.title}}</h3>
 
-{{#each products as |product|}}
-  <h4><LinkTo @route="products.show" @model={{product.id}}>{{product.name}}</LinkTo></h4>
+<div class='nav-bar'>
+  <div class='header link-wrapper'>
+    <img class='link-image header-item' src='/assets/avatar.png' alt='quandl logo'>
+    <div class='link-text header-item'>Data Publisher</div>
+  </div>
+</div>
 
-  <table class='table'>
-    <th class='table-row table-row--header'>
-      <td class='table-cell table-cell--primary' />
-      {{#each product.fieldNames as |fieldName|}}
-        <td class='table-cell'>{{fieldName}}</td>
+<div class='table-wrapper'>
+  <div class='sub-header'>datasets in this data product</div>
+
+  {{#each products as |product|}}
+    <div class='title-bar'>
+      <div class='title'>{{product.name}}</div>
+      <LinkTo @route="products.show" @model={{product.id}} class='subtitle'>expand</LinkTo>
+    </div>
+
+    <table class='table'>
+      <th class='table-row table-row--header'>
+        <td class='table-cell table-cell--primary' />
+        {{#each product.fieldNames as |fieldName|}}
+          <td class='table-cell'>{{fieldName}}</td>
+        {{/each}}
+      </th>
+      {{#each product.productDataSubset as |data index|}}
+        <tr class='table-row'>
+          <td class='table-cell table-cell--primary'>{{add index 1}}</td>
+          {{#each-in data as |title value|}}
+            <td class='table-cell'>{{value}}</td>
+          {{/each-in}}
+        </tr>
       {{/each}}
-    </th>
-    {{#each product.productDataSubset as |data index|}}
-      <tr class='table-row'>
-        <td class='table-cell table-cell--primary'>{{add index 1}}</td>
-        {{#each-in data as |title value|}}
-          <td class='table-cell'>{{value}}</td>
-        {{/each-in}}
-      </tr>
-    {{/each}}
-  </table>
-{{/each}}
+    </table>
+  {{/each}}
+</div>
 
 {{outlet}}
