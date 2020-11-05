@@ -1,8 +1,8 @@
 <HeaderBar @isLarge={{false}} />
 <TitleBar @title={{product.name}}>
   <div class='buttons'>
-    <div class='button'>coverage</div>
-    <div class='button button--secondary'>download {{fa-icon 'caret-down'}}</div>
+    <GeneralButton>coverage</GeneralButton>
+    <GeneralButton @isSecondary={{true}}>download {{fa-icon 'caret-down'}}</GeneralButton>
   </div>
 </TitleBar>
 

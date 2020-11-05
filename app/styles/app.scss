@@ -5,6 +5,7 @@
 
 // Components
 @import './components/data-table.scss';
+@import './components/general-button.scss';
 @import './components/header-bar.scss';
 @import './components/nav-bar.scss';
 @import './components/sidebar-panel.scss';
@@ -13,52 +14,11 @@
 
 // Pages
 @import './pages/products/index.scss';
+@import './pages/products/show.scss';
 
 .buttons {
   display: flex;
   align-items: center;
-}
-
-.button {
-  text-align: center;
-  line-height: 30px;
-  width: 140px;
-  height: 30px;
-  border: solid 1px $turquoise;
-  color: $turquoise;
-  margin: 0 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-family: $quantico-bold;
-
-  &--secondary {
-    background-color: $turquoise;
-    color: $white;
-  }
-
-  &--small {
-    border: solid 2px $green;
-    color: $green;
-    width: 120px;
-    height: 15px;
-    line-height: 15px;
-    border-radius: 2px;
-    padding: 3px 1px;
-    font-family: $source-sans-pro-bold;
-    font-size: 12px;
-  }
-
-  &--full-width {
-    width: 80%;
-    margin: 0 auto 10px auto;
-  }
-
-  &--icon {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: $source-sans-pro;
-  }
 }
 
 .button-item {

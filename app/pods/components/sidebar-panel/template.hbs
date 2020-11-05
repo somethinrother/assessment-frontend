@@ -9,8 +9,9 @@
   <SidebarItem @name={{'history'}} @value={{'nov 2005'}} />
   <SidebarItem @name={{'coverage'}} @value={{'5000+ companies, 59 indicators'}} />
 
-  <div class='button button--full-width button--icon'>
+  <GeneralButton @fullWidth={{true}} @hasIcon={{true}}>
     <span class='button-item'>tables api</span>
-    <span class='button-item'>{{fa-icon 'info-circle' class='info'}}</span></div>
-  <div class='button button--secondary button--full-width'>pricing</div>
+    <span class='button-item'>{{fa-icon 'info-circle' class='info'}}</span>
+  </GeneralButton>
+  <GeneralButton @isSecondary={{true}} @fullWidth={{true}}>pricing</GeneralButton>
 </div>
