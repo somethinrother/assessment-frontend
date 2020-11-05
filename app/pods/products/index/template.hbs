@@ -48,22 +48,7 @@
     {{/each}}
   </div>
 
-  <div class='sidebar'>
-    <div class='button button--small'>commercial data</div>
-    <div class='sidebar-title'>data overview</div>
-    <div class='sidebar-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate eget sem vitae interdum. Nam iaculis, ante vitae tristique iaculis, dui nisl porta lacus, et finibus lectus lacus sed diam. Cras vitae ante erat. Sed sed augue interdum, luctus sem id, posuere elit. Praesent id ante consectetur, malesuada nulla non, eleifend eros.</div>
-
-    <SidebarItem @name={{'delivery frequency'}} @value={{'daily'}} />
-    <SidebarItem @name={{'data frequency'}} @value={{'daily'}} />
-    <SidebarItem @name={{'reporting lag'}} @value={{'12 hours'}} />
-    <SidebarItem @name={{'history'}} @value={{'nov 2005'}} />
-    <SidebarItem @name={{'coverage'}} @value={{'5000+ companies, 59 indicators'}} />
-
-    <div class='button button--full-width button--icon'>
-      <span class='button-item'>tables api</span>
-      <span class='button-item'>{{fa-icon 'info-circle' class='info'}}</span></div>
-    <div class='button button--secondary button--full-width'>pricing</div>
-  </div>
+  <SidebarPanel />
 </div>
 
 {{outlet}}
