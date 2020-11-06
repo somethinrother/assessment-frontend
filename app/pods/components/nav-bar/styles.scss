@@ -1,0 +1,38 @@
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $extra-dark-turquoise;
+}
+
+.nav-block {
+  display: flex;
+}
+
+.nav-item {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: $source-sans-pro;
+  color: $white;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &--active {
+    background-color: $dark-turquoise;
+  }
+}
+
+.bars {
+  font-size: 22px;
+  border-right: solid 0.5px $dark-turquoise;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+}

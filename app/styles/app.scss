@@ -1,10 +1,9 @@
 // Style files in the pods folder are automatically loaded in.
-@import 'pod-styles';
 @import './core/variables.scss';
 @import './core/fonts.scss';
+@import 'pod-styles';
 
 // Components
-@import './components/data-table.scss';
 @import './components/general-button.scss';
 @import './components/header-bar.scss';
 @import './components/nav-bar.scss';
