@@ -1,17 +1,9 @@
 // Style files in the pods folder are automatically loaded in.
 @import './core/variables.scss';
 @import './core/fonts.scss';
-@import 'pod-styles';
-
-// Components
-@import './components/general-button.scss';
-@import './components/header-bar.scss';
-@import './components/nav-bar.scss';
-@import './components/sidebar-panel.scss';
-@import './components/sidebar-item.scss';
-@import './components/tab-link.scss';
-@import './components/title-bar.scss';
 
 // Pages
 @import './pages/products/index.scss';
 @import './pages/products/show.scss';
+
+@import 'pod-styles';

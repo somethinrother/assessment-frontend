@@ -7,6 +7,7 @@
   font-family: $source-sans-pro;
   margin-bottom: 20px;
   border: solid 0.5px $light-grey;
+  border-bottom: none;
   background-color: $white;
 }
 
@@ -30,6 +31,10 @@
   padding: 0 5px;
   border-top: none;
   border-right: none;
+
+  &:last-of-type {
+    border-right: solid 0.5px $light-grey;
+  }
 
   &--primary {
     min-width: 20px;
