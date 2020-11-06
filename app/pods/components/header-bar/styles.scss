@@ -18,6 +18,10 @@
 .header-item {
   margin: 0 7px;
   color: $white;
+
+  &--large {
+    font-size: 28px;
+  }
 }
 
 .angle {
