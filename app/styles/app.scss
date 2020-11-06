@@ -1,2 +1,9 @@
+@import './core/variables.scss';
+@import './core/fonts.scss';
+
+// Pages
+@import './pages/products/index.scss';
+@import './pages/products/show.scss';
+
 // Style files in the pods folder are automatically loaded in.
 @import 'pod-styles';

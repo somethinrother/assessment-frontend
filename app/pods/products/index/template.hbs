@@ -1,17 +1,19 @@
-<h3>Product Page - Index - {{@publisher.title}}</h3>
+<NavBar />
+<HeaderBar @isLarge={{true}} />
 
-{{#each products as |product|}}
-  <h4><LinkTo @route="products.show" @model={{product.id}}>{{product.name}}</LinkTo></h4>
+<div class='page-wrapper'>
+  <div class='table-wrapper'>
+    <div class='sub-header'>datasets in this data product</div>
 
-  <table>
-    {{#each product.productDataSubset as |data|}}
-      <tr>
-        <td>{{data.ticker}}</td>
-        <td>{{data.comp_name}}</td>
-        <td>{{data.per_end_date}}</td>
-      </tr>
+    {{#each products as |product|}}
+      <TitleBar @title={{product.name}}>
+        <LinkTo @route="products.show" @model={{product.id}} class='subtitle'>expand</LinkTo>
+      </TitleBar>
+      <DataTable @product={{product}} @productData={{product.productDataSubset}} />
     {{/each}}
-  </table>
-{{/each}}
+  </div>
+
+  <SidebarPanel />
+</div>
 
 {{outlet}}

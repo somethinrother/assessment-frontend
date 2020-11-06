@@ -1,0 +1,25 @@
+.page-wrapper {
+  display: flex;
+}
+
+.table-wrapper {
+  background-color: $pale-blue;
+  padding: 10px;
+  width: 68vw;
+}
+
+.sub-header {
+  color: $dark-grey;
+  font-family: $quantico;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: $turquoise;
+  font-family: $quantico-bold;
+  font-size: 16px;
+  margin: 2vh 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}

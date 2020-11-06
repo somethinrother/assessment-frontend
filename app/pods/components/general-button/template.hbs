@@ -1,0 +1,11 @@
+<div
+  data-test-button='main'
+  class="button
+         {{if @isSecondary "button--secondary"}}
+         {{if @fullWidth "button--full-width"}}
+         {{if @hasIcon "button--icon"}}
+         {{if @isSmall "button--small"}}
+         "
+>
+  {{yield}}
+</div>

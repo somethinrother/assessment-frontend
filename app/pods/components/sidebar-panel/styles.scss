@@ -1,0 +1,21 @@
+& {
+  width: 32vw;
+  padding: 15px;
+  border-left: solid 1px $light-grey;
+}
+
+.sidebar-title {
+  font-family: $quantico-bold;
+  text-transform: uppercase;
+  margin: 14px 10px;
+}
+
+.sidebar-description {
+  font-family: $source-sans-pro;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.sidebar-items {
+  margin-bottom: 10px;
+}

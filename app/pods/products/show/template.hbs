@@ -1,17 +1,17 @@
-<h3>Sub-Product Page</h3>
+<HeaderBar @isLarge={{false}} />
+<TitleBar @title={{product.name}}>
+  <div class='buttons'>
+    <GeneralButton>coverage</GeneralButton>
+    <GeneralButton @isSecondary={{true}}>download {{fa-icon 'caret-down'}}</GeneralButton>
+  </div>
+</TitleBar>
 
-{{link-to 'Product page' 'products'}}
+<TitleBar>
+  <div class='tabs'>
+    <TabLink @isActive={{true}} @content={{'data sample'}} />
+    <TabLink @content={{'coverage'}} />
+  </div>
+</TitleBar>
 
-<h4>{{product.name}}</h4>
-
-<table>
-  {{#each productData as |data|}}
-    <tr>
-      <td>{{data.ticker}}</td>
-      <td>{{data.comp_name}}</td>
-      <td>{{data.per_end_date}}</td>
-    </tr>
-  {{/each}}
-</table>
-
+<DataTable @product={{product}} @productData={{productData}} @withFooter={{true}} />
 {{outlet}}

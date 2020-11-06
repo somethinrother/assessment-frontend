@@ -7,4 +7,9 @@ export default class ProductModel extends Model {
   get productDataSubset() {
     return this.data.slice(0,7);
   }
+
+  get fieldNames() {
+    const firstRow = this.data[0];
+    return Object.keys(firstRow);
+  }
 }
